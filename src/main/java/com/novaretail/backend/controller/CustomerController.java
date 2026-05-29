@@ -1,12 +1,11 @@
 package com.novaretail.backend.controller;
 
-import com.novaretail.backend.dto.UserCreateDTO;
-import com.novaretail.backend.dto.UserUpdateDTO;
+
 import com.novaretail.backend.service.CustomerService;
 import com.novaretail.backend.dto.CustomerCreateDTO;
 import com.novaretail.backend.dto.CustomerResponseDTO;
 import com.novaretail.backend.dto.CustomerUpdateDTO;
-import com.novaretail.backend.dto.ChangePasswordDTO;
+
 
 import java.util.List;
 
@@ -20,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -50,7 +48,7 @@ public class CustomerController {
 
         CustomerResponseDTO customer = customerService
                 .returnCustomerById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente no encontrado"));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
 
         return ResponseEntity.ok(customer);
     }

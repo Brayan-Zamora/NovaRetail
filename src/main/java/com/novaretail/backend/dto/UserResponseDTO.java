@@ -6,14 +6,9 @@ import lombok.Setter;
 @Getter
 @Setter
 
-public class CustomerResponseDTO {
-
-
+public class UserResponseDTO {
     private Long id;
     private String name;
     private String email;
-    private String phone;
-    private String address;
-    private Long user_id;
+    private String role;
 }
-

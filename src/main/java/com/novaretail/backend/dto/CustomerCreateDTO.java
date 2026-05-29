@@ -19,4 +19,7 @@ public class CustomerCreateDTO {
     private String phone;
     
     private String address;
+
+    @NotBlank
+    private Long user_id;
 }
